@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GifExpertApp } from '../GifExpertApp';
+import PropTypes from 'prop-types';
 
 
 export const AddCategory = ({onNewCategory}) => {
@@ -16,7 +17,7 @@ export const AddCategory = ({onNewCategory}) => {
         setInputValue('')
     }
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="form">
         <input
         type="text"
         placeholder="Buscar GIF"
@@ -26,4 +27,8 @@ export const AddCategory = ({onNewCategory}) => {
     </form>
     
   )
+}
+
+AddCategory.propTypes = {
+  onNewCategory: PropTypes.func.isRequired,
 }
